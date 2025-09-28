@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fluffin Desserts | Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav>
+    <div class="logo">Fluffin Desserts</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html">Menu</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <section>
+    <h2>Our Dessert Menu</h2>
+    <div class="grid">
+      <div class="card" onclick="openModal('Chocolate Cake','Rich, moist chocolate cake with cocoa and buttercream frosting.')"><h3>Chocolate Cake</h3></div>
+      <div class="card" onclick="openModal('Cheesecake','Creamy New York cheesecake with buttery biscuit crust.')"><h3>Cheesecake</h3></div>
+      <div class="card" onclick="openModal('Brownies','Fudgy chocolate brownies with a crackly top.')"><h3>Brownies</h3></div>
+      <div class="card" onclick="openModal('Tiramisu','Classic Italian dessert with coffee-soaked ladyfingers and mascarpone cream.')"><h3>Tiramisu</h3></div>
+      <div class="card" onclick="openModal('Cupcakes','Vanilla cupcakes topped with colorful buttercream frosting.')"><h3>Cupcakes</h3></div>
+      <div class="card" onclick="openModal('Macarons','French macarons with almond shells and creamy filling.')"><h3>Macarons</h3></div>
+      <div class="card" onclick="openModal('Ice Cream','Homemade creamy vanilla ice cream with chocolate drizzle.')"><h3>Ice Cream</h3></div>
+      <div class="card" onclick="openModal('Donuts','Soft donuts glazed with sugar icing.')"><h3>Donuts</h3></div>
+      <div class="card" onclick="openModal('Fruit Tart','Buttery tart filled with custard and topped with fresh fruits.')"><h3>Fruit Tart</h3></div>
+    </div>
+  </section>
+
+  <!-- Modal -->
+  <div class="modal" id="recipeModal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <p id="modalText"></p>
+    </div>
+  </div>
+
+  <footer>
+    <p>© 2025 Fluffin Desserts | Made with ♥</p>
+  </footer>
+
+  <script>
+    function openModal(title,text){
+      document.getElementById("modalTitle").innerText = title;
+      document.getElementById("modalText").innerText = text;
+      document.getElementById("recipeModal").style.display = "flex";
+    }
+    function closeModal(){
+      document.getElementById("recipeModal").style.display = "none";
+    }
+    window.onclick = function(e){
+      if(e.target == document.getElementById("recipeModal")) closeModal();
+    }
+  </script>
+</body>
+</html>
